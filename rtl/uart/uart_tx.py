@@ -39,6 +39,7 @@ def uart_tx(clk_i, rst_i, tx_tick_i, dat_i, start_i, ready_o, tx_o):
 
 	return hdl.instances()
 
+
 # Local Variables:
 # flycheck-flake8-maximum-line-length: 200
 # flycheck-flake8rc: ".flake8rc"
