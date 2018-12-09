@@ -24,9 +24,9 @@ def uart_tx(clk_i, rst_i, tx_tick_i, dat_i, start_i, ready_o, tx_o):
 			else:
 				tx_o.next = 1 # No estoy transmitiendo
 
-		elif state == tx_state.DATA: # Sifuiendo estructura rx
+		elif state == tx_state.DATA: # Siguiendo estructura rx
 			if tx_tick_i: # Usando el divisor del clk_i
-				if cnt => 1 and cnt <= 8:
+				if cnt >= 1 and cnt <= 8:
 					tx_o.next = data[0]
 					data.next = hdl.concat(0, data[8:1])
 					cnt.next = cnt + 1
