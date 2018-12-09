@@ -1,2 +1,2 @@
 # UART
-Asynchronous Receiver-Transmitter, Half-Duplex, MyHdl-Python3.
+Universal Asynchronous Receiver-Transmitter, Half-Duplex, MyHdl-Python3.
