@@ -7,7 +7,7 @@ from coregen.utils import createSignal
 
 
 @hdl.block
-def FIFO(clk_i, rst_i, enqueue_i, dequeue_i, dat_i, dat_o, count_o, empty_o, full_o, A_WIDTH=8, D_WIDTH=8):
+def FIFO(clk_i, rst_i, enqueue_i, dequeue_i, dat_i, dat_o, count_o, empty_o, full_o, A_WIDTH=10, D_WIDTH=8):
     assert len(dat_i) == D_WIDTH, "[FIFO] Error: Data width mismatch"
     assert len(dat_o) == D_WIDTH, "[FIFO] Error: Data width mismatch"
     assert len(count_o) == A_WIDTH + 1, "[FIFO] Error: Invalid width for signal 'count' = {}. Must be A_WIDTH + 1".format(len(A_WIDTH))
