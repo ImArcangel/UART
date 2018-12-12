@@ -1,9 +1,0 @@
-run
--ifn Loopback.prj
--top Loopback
--ifmt MIXED
--opt_mode SPEED
--opt_level 2
--register_balancing yes
--ofn Loopback.ngc
--p xc3s200-ft256-4
