@@ -42,13 +42,13 @@ def driver7seg(clk_i, rst_i, value_i, anodos_o, segmentos_o, CLK_BUS=50_000_000)
     @hdl.always_comb
     def segmentos_proc():
         anodos_o.next = anodos
-        if anodos == 0b0001:
+        if anodos == 0b1110:
             segmentos_o.next = segment_ROM[one]
-        elif anodos == 0b0010:
+        elif anodos == 0b1101:
             segmentos_o.next = segment_ROM[ten]
-        elif anodos == 0b0100:
+        elif anodos == 0b1011:
             segmentos_o.next = segment_ROM[hundred]
-        elif anodos == 0b1000:
+        elif anodos == 0b0111:
             segmentos_o.next = segment_ROM[thousand]
         else:
             segmentos_o.next = 0xFF
