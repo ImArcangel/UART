@@ -1,5 +1,5 @@
 $date
-	Wed Dec 12 11:48:14 2018
+	Wed Dec 12 12:00:14 2018
 $end
 $version
 	Icarus Verilog
@@ -160,38 +160,38 @@ b1 @
 0!
 0&
 0,
-0"
 b0 +
-0K
+0"
 0N
+0K
 0A
 b1 B
 0H
 b0 C
-b0 F
-b0 E
-b0 G
 b0 D
-b0 0
+b0 F
+b0 G
+b0 E
 b0 /
+b0 0
 1%
 1-
 b0 *
 b0 .
-0I
-b0 <
 b0 (
 b0 9
+b0 <
+0I
 b0 6
 b0 8
-0:
 b0 7
+0:
 b111 ;
+0?
 0M
 0L
 b0 =
 b0 >
-0?
 04
 05
 b0 3
