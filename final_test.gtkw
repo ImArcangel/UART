@@ -1,18 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
-[*] Tue Dec 11 16:45:48 2018
+[*] Thu Dec 13 02:39:56 2018
 [*]
 [dumpfile] "/home/arcangel/Git_workspace/UART/loopback_testbench.vcd"
-[dumpfile_mtime] "Tue Dec 11 15:34:39 2018"
+[dumpfile_mtime] "Thu Dec 13 02:11:08 2018"
 [dumpfile_size] 1478084
 [savefile] "/home/arcangel/Git_workspace/UART/final_test.gtkw"
-[timestart] 0
+[timestart] 1080
 [size] 1366 676
-[pos] -51 -51
-*-13.000000 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-4.768141 2330 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] loopback_testbench.
-[sst_width] 223
-[signals_width] 118
+[treeopen] loopback_testbench.Loopback0.
+[treeopen] loopback_testbench.Loopback0.driver7seg0.
+[treeopen] loopback_testbench.Loopback0.driver7seg0.bin2bcd0.
+[sst_width] 264
+[signals_width] 158
 [sst_expanded] 1
 [sst_vpaned_height] 179
 @28
@@ -32,11 +35,39 @@ loopback_testbench.Loopback0.rx_dat[7:0]
 loopback_testbench.Loopback0.dat[7:0]
 @200
 -
-@821
-[color] 3
-loopback_testbench.Loopback0.rx_dat[7:0]
 @820
 [color] 3
+loopback_testbench.Loopback0.rx_dat[7:0]
+[color] 3
 loopback_testbench.Loopback0.dat[7:0]
+@200
+-Decimal
+@24
+[color] 2
+loopback_testbench.Loopback0.value[10:0]
+@200
+-Bcd
+@24
+[color] 2
+loopback_testbench.Loopback0.driver7seg0.thousand[3:0]
+[color] 2
+loopback_testbench.Loopback0.driver7seg0.hundred[3:0]
+[color] 2
+loopback_testbench.Loopback0.driver7seg0.ten[3:0]
+[color] 2
+loopback_testbench.Loopback0.driver7seg0.one[3:0]
+@200
+-Display
+@c00028
+loopback_testbench.Loopback0.driver7seg0.anodos_o[3:0]
+@28
+(0)loopback_testbench.Loopback0.driver7seg0.anodos_o[3:0]
+(1)loopback_testbench.Loopback0.driver7seg0.anodos_o[3:0]
+(2)loopback_testbench.Loopback0.driver7seg0.anodos_o[3:0]
+(3)loopback_testbench.Loopback0.driver7seg0.anodos_o[3:0]
+@1401208
+-group_end
+@29
+loopback_testbench.Loopback0.driver7seg0.segmentos_o[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

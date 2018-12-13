@@ -26,14 +26,16 @@ def uart_tx(clk_i, rst_i, tx_tick_i, dat_i, start_i, ready_o, tx_o):
 
 		elif state == tx_state.TX:
 			if tx_tick_i: #Usando el divisor del clk_i
+				#lectura de los 8 bits que nos impartan para el caracter
 				if cnt >=1 and cnt <= 8:
 					tx_o.next    = data[0]
-					data.next   = hdl.concat(False, data[8:1])
+					data.next   = hdl.concat(False, data[8:1]) #Usando una logica similar al uart_rx
 					cnt.next = cnt + 1
 				else: 
 					tx_o.next = 0
 					cnt.next = cnt + 1
 
+				#cuando termina de leer el ultimo bit del caracter, reinicia todo.
 				if cnt == 9:
 						tx_o.next    = 1 
 						ready_o.next = 1
@@ -41,7 +43,7 @@ def uart_tx(clk_i, rst_i, tx_tick_i, dat_i, start_i, ready_o, tx_o):
 						cnt.next = 0
 						
 		else:
-			state.next = tx_state.IDLE
+			state.next = tx_state.IDLE #Default
 
 	return hdl.instances()
 

@@ -21,7 +21,7 @@ def Loopback(clk_i, rst_i, rx_i, tx_o, anodos_o, segmentos_o, FIFO_DEPTH=1024, C
     full = createSignal(0,1) # salida full_o del FIFO
     dat = createSignal(0,8) # entrada dat_i del tx y salida dat_o del FIFO
     value = createSignal(0,11) # salida count_o del FIFO y entrada value_i del Driver7Seg 
-    l_state = hdl.enum('RX','TX')
+    l_state = hdl.enum('RX','TX') #Declaracion para dos estados, recibiendo y enviando.
     state = hdl.Signal(l_state.RX)
 
     uart = UART(clk_i =clk_i , rst_i=rst_i,
@@ -34,6 +34,8 @@ def Loopback(clk_i, rst_i, rx_i, tx_o, anodos_o, segmentos_o, FIFO_DEPTH=1024, C
     	enqueue_i=rx_ready, dequeue_i=dequeue, dat_i=rx_dat, dat_o=dat, count_o=value, empty_o=empty, full_o=full, 
     	A_WIDTH=10, 
     	D_WIDTH=8)
+    	#A_WIDTH ancho de la señal, D_WIDTH ancho del caracter.
+
 
     driver = driver7seg(clk_i=clk_i, rst_i=rst_i, 
     	value_i=value, anodos_o=anodos_o, segmentos_o=segmentos_o,
@@ -41,15 +43,16 @@ def Loopback(clk_i, rst_i, rx_i, tx_o, anodos_o, segmentos_o, FIFO_DEPTH=1024, C
 
     @hdl.always_seq(clk_i.posedge, reset=rst_i)
     def l_state_m():
+    	
     	if state == l_state.RX:
-    		if rx_ready:
-    			if rx_dat == 0xa or full:
+    		if rx_ready: #condicion para cambiar de estado
+    			if rx_dat == 0xa or full: #si recibo "\n" o el FIFO esta full, transmito
     				state.next = l_state.TX
     	elif state == l_state.TX:
     		if not empty:
     			dequeue.next = 0
     			tx_start.next = 0
-    		if empty:
+    		if empty: #si el FIFO esta vacio, se devuelve al estado inicial; recibir.
     			state.next = l_state.RX
     		elif tx_ready and not dequeue:
     			dequeue.next = 1
